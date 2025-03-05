@@ -1,0 +1,11 @@
+{
+  "name": "api-test-framework",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^14.1.0",
+    "typescript": "^4.9.0"
+  }
+}
