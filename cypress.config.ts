@@ -2,6 +2,7 @@
 export default {
   e2e: {
     baseUrl: 'https://jsonplaceholder.typicode.com',
-    supportFile: 'cypress/support/e2e.ts'
+    supportFile: 'cypress/support/e2e.ts',
+    video:true
   },
 };
