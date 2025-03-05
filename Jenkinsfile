@@ -28,18 +28,11 @@ pipeline {
         }
 
         stage('Run Cypress Tests') {
-        steps {
-                script {
-                  try {
-                    // Run Cypress tests
-                    sh 'npx cypress run'
-                  } catch (Exception e) {
-                    currentBuild.result = 'UNSTABLE'
-                    echo "Tests failed, marking build as unstable"
-                  }
-                }
-              }
+            steps {
+                sh 'npx cypress run'
             }
+        }
+    }
 
     post {
         always {
