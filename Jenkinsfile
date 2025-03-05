@@ -37,7 +37,7 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'cypress/videos/**/*.mp4', fingerprint: true
-            junit 'cypress/results/**/*.xml'
+            junit '**/cypress/reports/test-results-*.xml'
         }
     }
 }
