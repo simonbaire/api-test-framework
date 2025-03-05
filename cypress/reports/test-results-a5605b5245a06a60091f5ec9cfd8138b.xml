@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.305" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-03-05T20:23:16" tests="0" file="cypress/e2e/api.spec.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="API Tests" timestamp="2025-03-05T20:23:16" tests="2" time="0.302" failures="1">
+    <testcase name="API Tests should return a list of users" time="0.122" classname="should return a list of users">
+    </testcase>
+    <testcase name="API Tests should return a user with correct name" time="0.000" classname="should return a user with correct name">
+      <failure message="expected &apos;Leanne Graham&apos; to equal &apos;Wrong name&apos;" type="AssertionError"><![CDATA[AssertionError: expected 'Leanne Graham' to equal 'Wrong name'
+    at Context.eval (webpack://api-test-framework/./cypress/e2e/api.spec.cy.ts:13:39)
+    at getRet (https://jsonplaceholder.typicode.com/__cypress/runner/cypress_runner.js:118322:20)
+    at tryCatcher (https://jsonplaceholder.typicode.com/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise.attempt.Promise.try (https://jsonplaceholder.typicode.com/__cypress/runner/cypress_runner.js:4285:29)
+    at Context.thenFn (https://jsonplaceholder.typicode.com/__cypress/runner/cypress_runner.js:118333:66)
+    at Context.then (https://jsonplaceholder.typicode.com/__cypress/runner/cypress_runner.js:118584:21)
+
+      + expected - actual
+
+      -'Leanne Graham'
+      +'Wrong name'
+      ]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
