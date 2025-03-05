@@ -40,4 +40,7 @@ pipeline {
             junit '**/cypress/reports/test-results-*.xml'
         }
     }
+    catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+      junit '**/cypress/reports/test-results-*.xml'
+    }
 }
