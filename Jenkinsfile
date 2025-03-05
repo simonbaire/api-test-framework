@@ -28,19 +28,23 @@ pipeline {
         }
 
         stage('Run Cypress Tests') {
-            steps {
-                sh 'npx cypress run'
+        steps {
+                script {
+                  try {
+                    // Run Cypress tests
+                    sh 'npx cypress run'
+                  } catch (Exception e) {
+                    currentBuild.result = 'UNSTABLE'
+                    echo "Tests failed, marking build as unstable"
+                  }
+                }
+              }
             }
-        }
-    }
 
     post {
         always {
             archiveArtifacts artifacts: 'cypress/videos/**/*.mp4', fingerprint: true
             junit '**/cypress/reports/test-results-*.xml'
         }
-    }
-    catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
-      junit '**/cypress/reports/test-results-*.xml'
     }
 }
